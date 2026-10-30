@@ -3,10 +3,14 @@
 Finds duplicate customer records using multi-pass blocking, fuzzy-string pair features and a
 learned matcher, benchmarked against a rule-based baseline on held-out entities (Febrl3).
 
-![PR curve](docs/pr_curve.png)
-![Feature importance](docs/feature_importance.png)
-![Terminal output](docs/terminal_output.png)
+<p align="center">
+  <img src="docs/pr_curve.png" width="380" alt="Precision-Recall curve">
+  <img src="docs/feature_importance.png" width="380" alt="Feature importance">
+</p>
 
+<p align="center">
+  <img src="docs/terminal_output.png" width="700" alt="Terminal output">
+</p>
 ## Pipeline
 1. **Data**: Febrl3 benchmark (5,000 records, 2,000 entities, 6,538 true duplicate pairs, realistic typos and
    missing values) or a Faker-based synthetic generator with planted duplicates and hard negatives.
