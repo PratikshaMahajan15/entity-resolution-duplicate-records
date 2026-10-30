@@ -1,0 +1,8 @@
+pandas
+numpy
+scikit-learn
+rapidfuzz
+networkx
+matplotlib
+faker            # synthetic data mode
+recordlinkage    # only needed for the Febrl3 benchmark (bundles the dataset)
