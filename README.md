@@ -3,8 +3,8 @@
 Finds duplicate customer records using multi-pass blocking, fuzzy-string pair features and a
 learned matcher, benchmarked against a rule-based baseline on held-out entities (Febrl3).
 
-![PR curve](results/pr_curve.png)
-![Feature importance](results/feature_importance.png)
+![PR curve](docs/pr_curve.png)
+![Feature importance](docs/feature_importance.png)
 ![Terminal output](docs/terminal_output.png)
 
 ## Pipeline
