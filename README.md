@@ -11,7 +11,7 @@ learned matcher, benchmarked against a rule-based baseline on held-out entities 
 <p align="center">
   <img src="docs/terminal_output.png" width="700" alt="Terminal output">
 </p>
-# Pipeline
+## Pipeline
 1. **Data**: Febrl3 benchmark (5,000 records, 2,000 entities, 6,538 true duplicate pairs, realistic typos and
    missing values) or a Faker-based synthetic generator with planted duplicates and hard negatives.
 2. **Multi-pass blocking**: candidate pairs are the union of five cheap keys: postcode, Soundex(surname)+initial,
