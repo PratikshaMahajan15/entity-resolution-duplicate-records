@@ -11,19 +11,19 @@ learned matcher, benchmarked against a rule-based baseline on held-out entities 
 <p align="center">
   <img src="docs/terminal_output.png" width="700" alt="Terminal output">
 </p>
-## Pipeline
-1. **Data**: Febrl3 benchmark (5,000 records, 2,000 entities, 6,538 true duplicate pairs, realistic typos and
+# Pipeline
+1. Data: Febrl3 benchmark (5,000 records, 2,000 entities, 6,538 true duplicate pairs, realistic typos and
    missing values) or a Faker-based synthetic generator with planted duplicates and hard negatives.
-2. **Multi-pass blocking**: candidate pairs are the union of five cheap keys: postcode, Soundex(surname)+initial,
+2. Multi-pass blocking: candidate pairs are the union of five cheap keys: postcode, Soundex(surname)+initial,
    date of birth, suburb, and a swap-invariant name-prefix key. A typo that breaks one key is rescued by another.
-3. **Pair features** (rapidfuzz): Jaro-Winkler/ratio on names, token-sort on address, exact/edit-distance on
+3. Pair features (rapidfuzz): Jaro-Winkler/ratio on names, token-sort on address, exact/edit-distance on
    postcode and DOB, name-swap flag, Soundex match, missing-value count.
-4. **Models**: hand-weighted rule baseline vs logistic regression vs gradient boosting; thresholds tuned on
+4. Models: hand-weighted rule baseline vs logistic regression vs gradient boosting; thresholds tuned on
    cross-validated train predictions, never on test.
-5. **Evaluation**: split by *entity* (no leakage), repeated over several random splits (mean ± std). Recall is
+5. Evaluation: split by *entity* (no leakage), repeated over several random splits (mean ± std). Recall is
    measured against ALL true pairs, so pairs lost in blocking count as misses. Predicted pairs are then clustered
    (connected components).
-6. **Analysis**: PR curve, feature importance, and error analysis (`results/errors.csv`).
+6. Analysis: PR curve, feature importance, and error analysis (`results/errors.csv`).
 
 ## Run
 ```bash
